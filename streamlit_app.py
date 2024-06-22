@@ -8,7 +8,7 @@ st.set_page_config(page_title="⚕️ASCLEPIUS⚕️")
 # Replicate Credentials
 with st.sidebar:
     st.title('⚕️ASCLEPIUS⚕️')
-    st.write('This chatbot is created by Rudraksh Gupta, X CAIE | 2024-25 & Ayush Bhowal, X A | 2024-25 .')
+    st.write('Created by Rudraksh Gupta and Ayush Bhowal')
     if 'REPLICATE_API_TOKEN' in st.secrets:
         st.success('API key already provided!', icon='✅')
         replicate_api = st.secrets['REPLICATE_API_TOKEN']
