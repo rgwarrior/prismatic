@@ -13,14 +13,14 @@ with st.sidebar:
         st.success('API key already provided!', icon='✅')
         replicate_api = st.secrets['REGISTRATION_TOKEN']
     else:
-        replicate_api = st.text_input('Enter your token:', type='password')
+        replicate_api = st.text_input('Enter your registration token:', type='password')
         if not (replicate_api.startswith('r8_') and len(replicate_api)==40):
             st.warning('Please enter your registration token', icon='⚠️')
         else:
             st.success('Proceed to entering your prompt message!', icon='👉')
     os.environ['REGISTRATION_TOKEN'] = replicate_api
 
-    st.subheader('Models/Verison')
+    st.subheader('Model/Verison')
     selected_model = st.sidebar.selectbox('Choose a Asclepius Model/Version', ['Asclepius-1.0', 'Asclepius-2.0'], key='selected_model')
     if selected_model == 'Asclepius-1.0':
         llm = 'a16z-infra/llama7b-v2-chat:4f0a4744c7295c024a1de15e1a63c880d3da035fa1f49bfd344fe076074c8eea'
